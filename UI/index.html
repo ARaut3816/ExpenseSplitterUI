@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="expenseManagementApp">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Splitter</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/S.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Lato:400,300,700,900"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"
+    integrity="sha512-KZmyTq3PLx9EZl0RHShHQuXtrvdJ+m35tuOiwlcZfs/rE7NZv29ygNA8SFCkMXTnYZQK2OX0Gm2qKGfvWEtRXA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular-csp.css"
+    integrity="sha512-f7WVHp6iaZ7iOx9duYm67KLwCFJ9KirfMIK0MAOxf1wq5M8Ogdw5ljbCxlk/BtWIbyXWMsIaDaqwUpXttPQ/5g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular-csp.min.css"
+    integrity="sha512-nptw3cPhphu13Dy21CXMS1ceuSy2yxpKswAfZ7bAAE2Lvh8rHXhQFOjU+sSnw4B+mEoQmKFLKOj8lmXKVk3gow=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.js"
+    integrity="sha512-klc+qN5PPscoGxSzFpetVsCr9sryi2e2vHwZKq43FdFyhSAa7vAqog/Ifl8tzg/8mBZiG2MAKhyjH5oPJp65EA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script type="text/javascript" src="../scripts/expense.renderers.js"></script>
+  <script type="text/javascript" src="../scripts/expense.actions.js"></script>
+  <script type="text/javascript" src="../scripts/expense.constants.js"></script>
+</head>
+
+<body ng-controller="expenseManagementController as expenseManagementCtrl">
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center">
+
+      <div class="logo me-auto">
+        <h1><a href="index.html">Splitter</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">About Us</a></li>
+          <li><a class="nav-link scrollto" href="#services">Services</a></li>
+          <li><a class="nav-link scrollto" href="#portfolio">Portfolio</a></li>
+          <li><a class="nav-link scrollto" href="#team">Team</a></li>
+          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#">Drop Down 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="#">Deep Drop Down 1</a></li>
+                  <li><a href="#">Deep Drop Down 2</a></li>
+                  <li><a href="#">Deep Drop Down 3</a></li>
+                  <li><a href="#">Deep Drop Down 4</a></li>
+                  <li><a href="#">Deep Drop Down 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Drop Down 2</a></li>
+              <li><a href="#">Drop Down 3</a></li>
+              <li><a href="#">Drop Down 4</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link scrollto" href="#contact">Contact Us</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End #header -->
+
+  <!-- ======= Hero Section ======= -->
+  <div>
+    <section id="hero" style="Height:600px">
+      <div class="hero-container" style="padding-top: 130px;">
+        <a href="#demo" class="btn-get-started scrollto" data-toggle="collapse">Add New Expense</a>
+        <div class="container py-5 h-100 panel-collapse collapse" align="center" id="demo">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-xl-5">
+              <div class="card rounded-3">
+                <div class="card-body p-4 p-md-5">
+
+                  <script
+                    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.js"></script>
+                  <link rel="stylesheet"
+                    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/css/bootstrap-multiselect.css" />
+                  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+                  <script
+                    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js"></script>
+                  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+                  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+                  <script
+                    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.js"></script>
+                  <link rel="stylesheet"
+                    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/css/bootstrap-multiselect.css" />
+                  <div class=" " align="center">
+                    <form action="" method="post" role="form" class="php-email-form">
+                      <div class="form-group" align="center">
+                        <select name="payer" class="form-control" ng-model="expenseManagementCtrl.payer" required>
+                          <option ng-value="9999"> Select Payer </option>
+                          <option ng-repeat="user in expenseManagementCtrl.users" ng-value="user.userId">
+                            {{user.userName}} </option>
+                        </select>
+                        <div ng-show="expenseManagementCtrl.payerUserIdNotValid">Please select payer.</div>
+                      </div>
+                      <div class="form-group">
+                        <select id="contributer" name="contributer[]" multiple="multiple" class="form-control"
+                          ng-model="expenseManagementCtrl.contributer">
+                          <option ng-repeat="user in expenseManagementCtrl.users" value="{{user.userId}}">
+                            {{user.userName}} </option>
+                        </select>
+                      </div>
+                      <div ng-show="expenseManagementCtrl.contributersUserIdsNotValid">Please select contributers.</div>
+                      <script>
+                        $(document).ready(function () {
+                          setTimeout(function () {
+                            $('#contributer').multiselect({
+                              nonSelectedText: 'Select Contributers',
+                              enableFiltering: true,
+                              enableCaseInsensitiveFiltering: true,
+                              buttonWidth: '400px',
+                              includeSelectAllOption: true
+                            })
+                          }, 2000);
+                        });
+                      </script>
+                      <div class="form-group mt-3">
+                        <input type="text" class="form-control" name="occasion" id="Occasion"
+                          placeholder="Enter Occasion" ng-model="expenseManagementCtrl.occassion" required>
+                      </div>
+                      <div ng-show="expenseManagementCtrl.contributersUserIdsNotValid">Please select occasion.</div>
+                      <div class="form-group mt-3">
+                        <input type="number" class="form-control" name="amount" id="Amount" placeholder="Enter Amount"
+                          ng-model="expenseManagementCtrl.amount" required>
+                      </div>
+                      <div class="form-group">
+                        <input type="button" class="btn btn-info" data-toggle="collapse" name="Add" value="Add"
+                          ng-click="expenseManagementCtrl.addExpense()" />
+                      </div>
+                      <div ng-if="expenseManagementCtrl.expenseAddSuccess"> Expense added successfully.</div>
+                      <div ng-if="expenseManagementCtrl.expenseAddFailure"> Expense added successfully.</div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div style="display:flex">
+          <table style="border:none;">
+            <tr>
+              <td style="border:none;padding:20px;"><a href="#demo" class="btn-get-started "
+                  ng-click="expenseManagementCtrl.showAllExpenses = !expenseManagementCtrl.showAllExpenses;">Show
+                  balance report</a></td>
+              <td style="border:none;padding:20px;"><a href="#demo" class="btn-get-started "
+                  ng-click="expenseManagementCtrl.showUserBalance = !expenseManagementCtrl.showUserBalance">Check User
+                  Balance</a></td>
+            </tr>
+            <tr ng-show="expenseManagementCtrl.showUserBalance">
+              <td colspan="2" align="center" style="background-color: #f8f9fa;border: 0;border-radius: 15px;">
+                <div class="bubble3">
+                <table width="100%" class="bubble">
+                  <tr>
+                    <td style="border:none;padding:20px;width: 70%;"><select name="userIdToCheckBal"
+                        class="form-control" ng-model="expenseManagementCtrl.userIdToCheckBal"
+                        ng-change="expenseManagementCtrl.getUserBalance()" required>
+                        <option ng-value="9999"> Select User </option>
+                        <option ng-repeat="user in expenseManagementCtrl.users" ng-value="user.userId">{{user.userName}} </option>
+                      </select></td>
+                    <td style="border:none;padding:20px;font-weight: bolder;">
+                      Balance : <span ng-class="(expenseManagementCtrl.userBalance < 0) ? 'text-danger' : 'text-success'">{{expenseManagementCtrl.userBalance.toFixed(3)}}/-</span></td>
+                  </tr>
+                </table>
+              </div>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </section><!-- #hero -->
+
+    <!-- ======= About Us Section ======= -->
+    <section id="about" class="about">
+      <div ng-show="expenseManagementCtrl.showAllExpenses">
+        <div style="margin: 50px; overflow-x:scroll">
+          <table class="table table-hover" style="width:100px">
+            <thead>
+              <tr>
+                <th scope="col" style="width:10px">Occasion</th>
+                <th scope="col" style="width:10px" ng-repeat="user in expenseManagementCtrl.users">{{user.userName}}
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="contri in expenseManagementCtrl.userwiseContriList">
+                <th scope="row" style="width:10px">{{contri.occasion}}</th>
+                <td ng-repeat="user in expenseManagementCtrl.users" style="width:10px">
+                  <span ng-if="contri.userIdVsContriMap[user.userId]">{{contri.userIdVsContriMap[user.userId]}}</span>
+                  <span ng-if="!contri.userIdVsContriMap[user.userId]">0</span>
+                </td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <th scope="col" style="width:10px">Outstandings</th>
+                <th ng-repeat="user in expenseManagementCtrl.users" style="width:10px">
+                  <span
+                    ng-if="expenseManagementCtrl.userIdVsBalance[user.userId]">{{expenseManagementCtrl.userIdVsBalance[user.userId]}}</span>
+                  <span
+                    ng-if="!expenseManagementCtrl.userIdVsBalance[user.userId]">{{expenseManagementCtrl.userIdVsBalance[user.userId]}}</span>
+                </th>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+
+      <!-- ======= Footer ======= -->
+      <footer id="footer">
+        <div class="container">
+          <div class="copyright">
+            &copy; Copyright <strong><span>Splitter</span></strong>. All Rights Reserved
+          </div>
+          <div class="credits">
+            Designed by <a href="mailto: akshay.raut@zebra.com">Akshay Raut</a>
+          </div>
+        </div>
+      </footer><!-- End #footer -->
+
+      <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+          class="bi bi-arrow-up-short"></i></a>
+
+</body>
+
+</html>
